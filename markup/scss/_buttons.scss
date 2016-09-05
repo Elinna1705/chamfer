@@ -1,12 +1,35 @@
 // buttons
 
 .btn{
+	border: none;
+	box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.5) inset, 0 1px 1px rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+.btn-promo{
 	padding: 18px 20px;
 	text-transform: uppercase;
 }
-.btn-danger{
+.btn-red{
 	background:linear-gradient(to bottom, #ca8181 0%,#a94f4f 100%);
 }
-.btn-success{
+.btn-green{
 	background: linear-gradient(to bottom, #81c355 0%,#4f9d48 100%);
+}
+.btn-portfolio{
+	background: linear-gradient(to bottom, #8dbf5d 0%,#59983a 100%);
+	padding: 5px 15px;
+	min-width: 130px;
+	border-radius: 15px;
+	&:not(:last-child){
+		margin-bottom: 20px;
+	}
+	&.btn-pressed{
+		background: #4d872e;
+	}
+}
+
+.btn-pressed{
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5) inset, 0 -1px 1px rgba(255, 255, 255, 0.5) inset;
 }

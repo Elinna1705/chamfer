@@ -128,7 +128,7 @@ body{
 				bottom: -90px;
 				left: 34px;
 				right: -9999px;
-				background: url(../images/bg-promo-gray-r.jpg);
+				background: url(../images/bg-promo-gray.jpg);
 				z-index: -1;
 			}
 			&:before{
@@ -145,9 +145,9 @@ body{
 	}
 
 	.proffesion{
-	display: block;
-	overflow: hidden;
-	margin-bottom: 15px;
+		display: block;
+		overflow: hidden;
+		margin-bottom: 15px;
 	}
 	.proffesion__decor{
 		display: inline-block;
@@ -167,7 +167,7 @@ body{
 		&:before{
 		right: 100%;
 		left: -999px;
-	}
+		}
 	}
 
 	.ava{
@@ -215,7 +215,7 @@ body{
 
 .about{
 	overflow: hidden;
-	background: url(../images/bg-about-r.jpg) 50% 0;
+	background: url(../images/bg-about.jpg) 50% 0;
 
 	.about-left{
 		position: relative;
@@ -230,7 +230,7 @@ body{
 				bottom: 0;
 				right: -9999px;
 				left: -9999px;
-				background: url(../images/bg-about-grey-l.jpg);
+				background: url(../images/bg-about-grey.jpg);
 				z-index: -1;
 				@include media('>=screen-md'){
 					right: 60px;
@@ -286,7 +286,7 @@ body{
 
 .portfolio{
 	overflow: hidden;
-	background: url(../images/bg-portfolio-l.jpg) 50% 0;
+	background: url(../images/bg-portfolio.jpg) 50% 0;
 
 	.portfolio-right{
 			position: relative;
@@ -294,17 +294,21 @@ body{
 			min-height: 750px;
 			margin-top: 50px;
 			padding-left: 65px;
-			@include media('>=screen-sm'){
-				&:after{
+			&:after{
 					content: '';
 					position: absolute;
 					bottom: 0;
-					left: 52px;
     				top: -50px;
 					right: -9999px;
-					background: url(../images/bg-portfolio-grey-r.jpg);
+					left: -9999px;
+					background: url(../images/bg-portfolio-grey.jpg);
 					z-index: -1;
+					@include media('>=screen-md'){
+						left: 52px;
+					}
 				}
+			@include media('>=screen-md'){
+				
 					&:before{
 				content: '';
 				position: absolute;
@@ -318,6 +322,47 @@ body{
 				}
 			}
 		}
+
+	.portfolio-item {
+		margin-bottom: 40px;
+		width: 200px;
+		margin: 0 auto 40px auto;
+		@include media('>=screen-md'){
+			width: auto;
+		}
+		
+		img{
+			margin-bottom: 20px;
+			box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.5);
+		}
+	}
+		
+	.porfolio-title{
+		display: block;
+		overflow: hidden;
+		/*width: 200px;*/
+	}
+	.porfolio-title__decor{
+		display: inline-block;
+		position: relative;
+		padding: 0 13px;
+		&:before,
+		&:after{
+			@include ycenter;
+			content: '';
+			border-top: solid #b3e4ff;
+			border-width: 1px 0;
+			left: 100%;
+			right: -999px;
+		}
+		&:before{
+		right: 100%;
+		left: -999px;
+		}
+	}
+	.portfolio-category{
+
+	}
 }
 
 
@@ -326,18 +371,93 @@ body{
 
 .testimonials{
 	overflow: hidden;
-	background: url(../images/bg-testimonials-r.jpg) 50% 0;
+	background: url(../images/bg-testimonials.jpg) 50% 0;
+	position: relative;
+	z-index: 0;
+	padding-top: 40px;
+	padding-bottom: 100px;
+	@include media('>=screen-md'){
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -9999px;
+			right:65%;
+			background: url(../images/bg-testimonials-gray.jpg);
+			z-index: -1;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0px;
+			right: 65%;
+			margin-right: -245px;
+			width: 245px;
+			background: url(../images/bg-testimonials-gray-angle.png);
+			z-index: -1;
+		}
+	}
+	.slick-arrow{
+		position: absolute;
+		border: 0;
+		z-index: 999;
+		text-indent: -9999px;
+		width: 40px;
+		height: 40px;
+		border-radius: 20px;
+	}
+	.slick-prev{
+		background: url(../images/arrow-left.png);
+		bottom: -50px;
+		right: 50%;
+		transform: translate(-15px);
+		@include media('>=screen-md'){
+			left: -40px;
+			bottom: inherit;
+			right: inherit;
+			top:50%;
+			transform: translate(0, -30px);
+		}
+		
+	}
+	.slick-next{
+		background: url(../images/arrow-right.png);
+		bottom: -50px;
+		left: 50%;
+		transform: translate(15px);
+		@include media('>=screen-md'){
+			right: -40px;
+			bottom: inherit;
+			left: inherit;
+			top:50%;
+			transform: translate(0, -30px);
+		}
+	}
+	.testimonial-item{
+		max-width: 90%;
+		position: relative;
+		padding-left: 40px;
+		padding-top: 20px;
+		@include media('>=screen-md'){
+			max-width: 400px;
+		}
+		&:before{
+			content: '"';
+			font-size: 30pt;
+			font-weight: 700;
+			position: absolute;
+			left: 0;
+			top: -10px;
+		}
+	}
+
 }
 
 .contact{
 	overflow: hidden;
-	background: url(../images/bg-contact-l.jpg) 50% 0;
-	padding-bottom: 50px;
-
-	.form-control{
-		margin-bottom: 15px;
-		border-radius: 10px;
-	}
+	background: url(../images/bg-contact.jpg) 50% 0;
 
 	input{
 		width: 217px;
@@ -345,4 +465,63 @@ body{
 	textarea{
 		width: 300px;
 	}
+
+	.contact-right{
+		position: relative;
+		z-index: 0;
+		@include media('>=screen-md'){
+			&:after{
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: -9999px;
+				background: url(../images/bg-contact-grey.jpg);
+				z-index: -1;
+			}
+			&:before{
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0px;
+				left: -323px;
+				width: 323px;
+				background: url(../images/bg-contact-gray-angle.png);
+				z-index: -1;
+			}
+
+		}
+	}
+
+
+	.form-control{
+		margin-bottom: 15px;
+		border-radius: 10px;
+	}
+
+	
+	.contact-map{
+		width: 300px;
+		height: 190px;
+		margin-top: 40px;
+		@include media('>=screen-sm'){
+			width: 375px;
+			height: 240px;
+		}
+
+		@include media('>=screen-md'){
+			width: 600px;
+			height: 380px;
+		}
+	}
+
+	.contact-container{
+		display: inline-block;
+		&:not(:last-child){
+			margin-right: 40px;
+		}
+	}
 }
+
+
