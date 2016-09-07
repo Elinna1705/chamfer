@@ -17,14 +17,15 @@
 .btn-green{
 	background: linear-gradient(to bottom, #81c355 0%,#4f9d48 100%);
 }
+.btn-blue{
+	background: linear-gradient(to bottom, #48b4b5 0%, #2c8587 100%);
+}
 .btn-portfolio{
 	background: linear-gradient(to bottom, #8dbf5d 0%,#59983a 100%);
 	padding: 5px 15px;
 	min-width: 130px;
 	border-radius: 15px;
-	&:not(:last-child){
-		margin-bottom: 20px;
-	}
+	
 	&.btn-pressed{
 		background: #4d872e;
 	}

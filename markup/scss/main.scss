@@ -38,10 +38,7 @@ $media-expressions: (
 body{
 	padding-top: 127px;
 	@include media('>=screen-sm'){
-		padding-top: 157px;
-	}
-	@include media('>=screen-sm'){
-		padding-top: 157px;
+		padding-top: 85px;
 	}
 	@include media('>=screen-md'){
 		padding-top: 85px;
@@ -64,11 +61,17 @@ body{
 	}
 }
 
+.nav-select{
+		color: #000;
+		width:100%;
+		border-radius:4px;
+		font-family: Helvetica;
+	}
+
 
 .header{
-	padding-top: 25px;
-	padding-bottom: 8px;
 	z-index: 999;
+	padding-top: 20px;
 	&:after{
 		content: '';
 		position: absolute;
@@ -94,20 +97,56 @@ body{
 	.navbar{
 		margin-bottom: 0;
 	}
+	.navbar-header{
+		position: relative;
+		padding-bottom: 30px;
+			}
+	.logo{
+		@include media('<screen-sm'){
+			@include xcenter;
+		}
+	}
+	.navbar-brand{
+		height: auto;
+	}
 	
 	.main-nav{
 		text-transform: uppercase;
 	}
-
 }
-
 
 
 .promo{
 	overflow: hidden;
 	background: url(../images/bg-promo-l.jpg) 50% 0;
-	padding-top: 50px;
+	padding-top: 70px;
 	padding-bottom: 35px;
+	position: relative;
+	z-index: 0;
+	@include media('>=screen-md'){
+		&:after{
+			content: '';
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 50%;
+			transform: translateX(162px);
+			right: -9999px;
+			background: url(../images/bg-promo-gray.jpg);
+			z-index: -1;
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 50%;
+			width: 276px;
+			background: url(../images/bg-promo-gray-angle.png);
+			transform: translateX(162px);
+			z-index: -1;
+		}
+	}
 	@include media('>=screen-sm'){
 		padding-top: 90px;
 		padding-bottom: 68px;
@@ -116,34 +155,9 @@ body{
 		padding-top: 80px;
 		padding-bottom: 90px;
 	}
-
 	.promo-right{
-		position: relative;
-		z-index: 0;
-		@include media('>=screen-md'){
-			&:after{
-				content: '';
-				position: absolute;
-				top: -80px;
-				bottom: -90px;
-				left: 34px;
-				right: -9999px;
-				background: url(../images/bg-promo-gray.jpg);
-				z-index: -1;
-			}
-			&:before{
-			content: '';
-			position: absolute;
-			top: -80px;
-			bottom: -90px;
-			left: -242px;
-			width: 276px;
-			background: url(../images/bg-promo-gray-angle.png);
-			z-index: -1;
-			}
-		}
+		padding-left: 40px;
 	}
-
 	.proffesion{
 		display: block;
 		overflow: hidden;
@@ -164,13 +178,12 @@ body{
 			left: 100%;
 			right: -999px;
 		}
-		&:before{
-		right: 100%;
-		left: -999px;
+			&:before{
+			right: 100%;
+			left: -999px;
+			}
 		}
-	}
-
-	.ava{
+		.ava{
 		display: inline-block;
 		border: 2px solid #fff;
 		box-shadow: 0 5px 16px rgba(#000, .58);
@@ -181,30 +194,30 @@ body{
 		@include media('>=screen-md'){
 			padding: 12px;
 			}
-	&:before{
-		content: '';
-		position: absolute;
-		border: 10px solid rgba(#fff, .51);
-		left: 7px;
-		right: 7px;
-		bottom: 7px;
-		top: 7px;
-		border-radius: 50%;
-		left: 7px;
-		right: 7px;
-		bottom: 7px;
-		top: 7px;
-		border-radius: 50%;
-		@include media('>=screen-md'){
-			border-width: 15px;
-			left: 11px;
-			right: 11px;
-			bottom: 11px;
-			top: 11px;
+		&:before{
+			content: '';
+			position: absolute;
+			border: 10px solid rgba(#fff, .51);
+			left: 7px;
+			right: 7px;
+			bottom: 7px;
+			top: 7px;
+			border-radius: 50%;
+			left: 7px;
+			right: 7px;
+			bottom: 7px;
+			top: 7px;
+			border-radius: 50%;
+			@include media('>=screen-md'){
+				border-width: 15px;
+				left: 11px;
+				right: 11px;
+				bottom: 11px;
+				top: 11px;
+				}
 			}
 		}
-	}
-	.ava__img{
+		.ava__img{
 	max-width: 238px;
 	@include media('>=screen-md'){
 		max-width: 100%;
@@ -216,6 +229,72 @@ body{
 .about{
 	overflow: hidden;
 	background: url(../images/bg-about.jpg) 50% 0;
+	position: relative;
+	z-index: 0;
+	@include media('>=screen-md'){	
+		&:before{
+				content: '';
+				position: absolute;
+				top: 0px;
+				bottom: 0;
+				right: 50%;
+				left: -9999px;
+				transform: translateX(-299px);
+				background: url(../images/bg-about-gray.jpg);
+				z-index: -1;
+		}
+		&:after{
+				content: '';
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				left: 50%;
+				right: -9999px;
+				width: 337px;
+				transform: translateX(-299px);
+				background: url(../images/bg-about-gray-angle.png);
+				z-index: -1;
+				}
+		}
+	@include media('>screen-lg'){	
+		&:before{
+			transform: translateX(-316px);
+		}
+		&:after{
+			transform: translateX(-316px);
+			}
+		}
+
+	.about-right{
+		padding: 0 30px 30px 30px;
+		@include media('>=screen-md'){	
+			padding-left: 140px;
+		}
+	}
+	.progress-legend-value{
+		float: right;
+	}
+
+	.experience-item{
+		border-left: 5px solid #848484;
+
+		@include media('>=screen-md'){
+			width: 380px;
+		}
+		padding-left: 18px;
+		&:not(:last-child){
+				margin-bottom: 50px;
+			}
+
+			.experience-date{
+				
+			}
+			.experience-title{
+				font-weight: 700;
+			}
+		
+		}
+	}
 
 	.about-left{
 		position: relative;
@@ -223,106 +302,72 @@ body{
 		min-height: 500px;
 		padding-bottom: 50px;
 
-		&:after{
+		@include media('<screen-md'){
+			&:before{
 				content: '';
 				position: absolute;
-				top: -18px;
-				bottom: 0;
+				top: -0;
+				bottom: 0px;
 				right: -9999px;
 				left: -9999px;
-				background: url(../images/bg-about-grey.jpg);
+				background: url(../images/bg-about-gray.jpg);
 				z-index: -1;
-				@include media('>=screen-md'){
-					right: 60px;
-				}
-			}
-		@include media('>=screen-md'){	
-			&:before{
-			content: '';
-			position: absolute;
-			top: -18px;
-			bottom: 0px;
-			right: -116px;
-			width: 337px;
-			background: url(../images/bg-about-gray-angle.png);
-			z-index: -1;
+
 			}
 		}
 	}
-
-	.about-right{
-		padding-left: 125px;
-	}
-
-
-	.progress-legend-value{
-		float: right;
-	}
-
-	.experience-item{
-		border-left: 5px solid #848484;
-		width: 380px;
-		padding-left: 18px;
-		&:not(:last-child){
-			margin-bottom: 50px;
-		}
-
-		.experience-date{
-			
-		}
-		.experience-title{
-			font-weight: 700;
-		}
-		.experience-description{
-
-		}
-	}
-
-}
-
-
-
 
 
 .portfolio{
 	overflow: hidden;
 	background: url(../images/bg-portfolio.jpg) 50% 0;
-
-	.portfolio-right{
-			position: relative;
-			z-index: 0;
-			min-height: 750px;
-			margin-top: 50px;
-			padding-left: 65px;
+	position: relative;
+	z-index: 0;
+	@include media('>=screen-md'){
+		&:after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			top: 0;
+			left: 50%;
+			transform: translateX(-90px);
+			right: -9999px;
+			background: url(../images/bg-portfolio-gray.jpg);
+			z-index: -1;
+		}
+			
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			right:50%;
+			width: 276px;
+			transform: translateX(-90px);
+			background: url(../images/bg-portfolio-gray-angle.png);
+			z-index: -1;
+			background-position: 100% 0;
+			}
+		}
+		@include media('>screen-lg'){	
+			&:before{
+				transform: translateX(-108px);
+			}
 			&:after{
-					content: '';
-					position: absolute;
-					bottom: 0;
-    				top: -50px;
-					right: -9999px;
-					left: -9999px;
-					background: url(../images/bg-portfolio-grey.jpg);
-					z-index: -1;
-					@include media('>=screen-md'){
-						left: 52px;
-					}
-				}
-			@include media('>=screen-md'){
-				
-					&:before{
-				content: '';
-				position: absolute;
-				top: -80px;
-				bottom: -90px;
-				left: -214px;
-				width: 276px;
-				background: url(../images/bg-portfolio-gray-angle.png);
-				z-index: -1;
-				background-position: 100% 0;
-				}
+				transform: translateX(-108px);
 			}
 		}
 
+
+	.portfolio-btn-container{
+		@include media('<screen-md'){
+			display: inline-block;
+		}
+		&:not(:last-child){
+			margin-bottom: 20px;
+			margin-right: 20px;
+		}
+	}
 	.portfolio-item {
 		margin-bottom: 40px;
 		width: 200px;
@@ -336,7 +381,31 @@ body{
 			box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.5);
 		}
 	}
-		
+	.portfolio-left{
+		padding-bottom: 40px;
+	}
+	.portfolio-right{
+		position: relative;
+		z-index: 0;
+		padding-top: 80px;
+		@include media('>=screen-md'){
+			padding-left: 150px;
+		}
+		@include media('<screen-md'){
+			&:before{
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0px;
+				right: -9999px;
+				left: -9999px;
+				background: url(../images/bg-portfolio-gray.jpg);
+				z-index: -1;
+
+			}
+		}
+	}
+
 	.porfolio-title{
 		display: block;
 		overflow: hidden;
@@ -374,31 +443,41 @@ body{
 	background: url(../images/bg-testimonials.jpg) 50% 0;
 	position: relative;
 	z-index: 0;
-	padding-top: 40px;
 	padding-bottom: 100px;
-	@include media('>=screen-md'){
+	@include media('>=screen-md'){	
 		&:before{
-			content: '';
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: -9999px;
-			right:65%;
-			background: url(../images/bg-testimonials-gray.jpg);
-			z-index: -1;
+				content: '';
+				position: absolute;
+				top: 0px;
+				bottom: 0;
+				right: 50%;
+				left: -9999px;
+				transform: translateX(-200px);
+				background: url(../images/bg-testimonials-gray.jpg);
+				z-index: -1;
 		}
 		&:after{
-			content: '';
-			position: absolute;
-			top: 0;
-			bottom: 0px;
-			right: 65%;
-			margin-right: -245px;
-			width: 245px;
-			background: url(../images/bg-testimonials-gray-angle.png);
-			z-index: -1;
+				content: '';
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				left: 50%;
+				right: -9999px;
+				width: 245px;
+				transform: translateX(-200px);
+				background: url(../images/bg-testimonials-gray-angle.png);
+				z-index: -1;
+				}
 		}
-	}
+	@include media('>screen-lg'){	
+		&:before{
+			transform: translateX(-290px);
+		}
+		&:after{
+			transform: translateX(-290px);
+			}
+		}
+
 	.slick-arrow{
 		position: absolute;
 		border: 0;
@@ -440,6 +519,7 @@ body{
 		position: relative;
 		padding-left: 40px;
 		padding-top: 20px;
+		margin-left: 30px;
 		@include media('>=screen-md'){
 			max-width: 400px;
 		}
@@ -458,6 +538,42 @@ body{
 .contact{
 	overflow: hidden;
 	background: url(../images/bg-contact.jpg) 50% 0;
+	position: relative;
+	z-index: 0;
+	@include media('>=screen-md'){
+		&:after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			top: 0;
+			left: 50%;
+			transform: translateX(-56px);
+			right: -9999px;
+			background: url(../images/bg-contact-gray.jpg);
+			z-index: -1;
+		}
+			
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			right:50%;
+			width: 324px;
+			transform: translateX(-56px);
+			background: url(../images/bg-contact-gray-angle.png);
+			z-index: -1;
+			background-position: 100% 0;
+			}
+		}
+		@include media('>screen-lg'){	
+			&:before{
+				transform: translateX(-144px);
+			}
+			&:after{
+				transform: translateX(-144px);
+			}
+		}
 
 	input{
 		width: 217px;
@@ -466,33 +582,7 @@ body{
 		width: 300px;
 	}
 
-	.contact-right{
-		position: relative;
-		z-index: 0;
-		@include media('>=screen-md'){
-			&:after{
-				content: '';
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: -9999px;
-				background: url(../images/bg-contact-grey.jpg);
-				z-index: -1;
-			}
-			&:before{
-				content: '';
-				position: absolute;
-				top: 0;
-				bottom: 0px;
-				left: -323px;
-				width: 323px;
-				background: url(../images/bg-contact-gray-angle.png);
-				z-index: -1;
-			}
-
-		}
-	}
+	
 
 
 	.form-control{
@@ -521,6 +611,10 @@ body{
 		&:not(:last-child){
 			margin-right: 40px;
 		}
+	}
+	.contact-right{
+		padding-top: 40px;
+
 	}
 }
 
